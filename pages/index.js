@@ -9,6 +9,11 @@ const IndexPage = () => {
           <a>1. Charts sample</a>
         </Link>
       </li>
+      <li>
+        <Link href="/demo">
+          <a>2. Line chart demo</a>
+        </Link>
+      </li>
     </ul>
   );
 }
