@@ -14,6 +14,11 @@ const IndexPage = () => {
           <a>2. Line chart demo</a>
         </Link>
       </li>
+      <li>
+        <Link href="/chart-toggle">
+          <a>3. Line chart toggle demo</a>
+        </Link>
+      </li>
     </ul>
   );
 }
