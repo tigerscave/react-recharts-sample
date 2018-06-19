@@ -4,8 +4,10 @@ import {
 } from 'recharts';
 
 export default class LineChartToggleDemo extends React.Component {
+ 
   render() {
-    const { data } = this.props;
+    const { data, isUvChartShown } = this.props;
+
     console.log(data);
     return (
       <LineChart width={600} height={300} data={data}
@@ -15,11 +17,13 @@ export default class LineChartToggleDemo extends React.Component {
         <CartesianGrid strokeDasharray="3 3"/>
         <Tooltip/>
         <Legend />
-        <Line
-          type="line"
-          dataKey="uv"
-          stroke="red"
-          activeDot={{r: 8}}/>
+        
+        {isUvChartShown ? 
+          <Line
+            type="line"
+            dataKey="uv"
+            stroke="red"
+            activeDot={{r: 8}}/> : null}
         <Line
           type="line"
           dataKey="pv"

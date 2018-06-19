@@ -29,7 +29,10 @@ class ChartTogglePage extends React.Component {
     return (
       <div>
         <div>
-          <LineChartToggleDemo data={data} />
+          <LineChartToggleDemo 
+          data={data}
+          isUvChartShown={isUvChartShown}
+          onToggleButtonClicked={this.onToggleButtonClicked} />
         </div>
         <div>
           <button
