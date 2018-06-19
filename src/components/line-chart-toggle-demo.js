@@ -15,11 +15,11 @@ export default class LineChartToggleDemo extends React.Component {
         <CartesianGrid strokeDasharray="3 3"/>
         <Tooltip/>
         <Legend />
-        {/*<Line
+        <Line
           type="line"
           dataKey="uv"
           stroke="red"
-          activeDot={{r: 8}}/>*/}
+          activeDot={{r: 8}}/>
         <Line
           type="line"
           dataKey="pv"
