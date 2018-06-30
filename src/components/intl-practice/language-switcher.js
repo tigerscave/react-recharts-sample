@@ -2,6 +2,7 @@ import React from 'react';
 
 const LanguageSwitcher = ({
   selectLanguageClicked,
+  value
 }) => {
   return (
     <div>
@@ -10,10 +11,10 @@ const LanguageSwitcher = ({
         <span>User : Rahmat</span>
       </p>
       <div>
-        <select>
-          <option onClick={() => selectLanguageClicked('en')}>English</option>
-          <option onClick={() => selectLanguageClicked('cn')}>Chinese</option>
-          <option onClick={() => selectLanguageClicked('jp')}>Japanese</option>
+        <select onChange={(event) => selectLanguageClicked(event)} value={value}>
+          <option value="English">English</option>
+          <option value="Chinese">Chinese</option>
+          <option value="Japanese">Japanese</option>
         </select>
       </div>
     </div>

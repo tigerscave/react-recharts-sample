@@ -9,26 +9,29 @@ export default class IntlPracticeContainer extends React.Component {
   constructor(props) {
     super(props); 
     this.state = {
-      languageMode: 'en',  // cn / jp
+      value: 'English',  // cn / jp
     }
 
-    this.selectLanguageClicked = languageMode => {
+    this.selectLanguageClicked = (event) => {
       this.setState({
-        languageMode: languageMode,
+        value: event.target.value,
       });
     };
   }
   render() {
-    const { languageMode } = this.state;
+    const { value } = this.state;
+    console.log(value);
+    
     return (
       <div>
         <LanguageSwitcher
-          selectLanguageClicked={this.selectLanguageClicked} />
-        {languageMode ==='en' ? 
+          selectLanguageClicked={this.selectLanguageClicked}
+          value={value} />
+        {value ==='English' ? 
           <Introduction /> : null}
-        {languageMode ==='jp' ? 
+        {value ==='Japanese' ? 
           <IntroductionJapanese /> : null}
-        {languageMode ==='cn' ? 
+        {value ==='Chinese' ? 
           <IntroductionChinese /> : null}
       </div>
     );
