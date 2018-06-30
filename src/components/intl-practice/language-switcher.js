@@ -1,6 +1,8 @@
 import React from 'react';
 
-const LanguageSwitcher = () => {
+const LanguageSwitcher = ({
+  selectLanguageClicked,
+}) => {
   return (
     <div>
       <h3>LanguageSwitcher</h3>
@@ -9,9 +11,9 @@ const LanguageSwitcher = () => {
       </p>
       <div>
         <select>
-          <option>English</option>
-          <option>Chinese</option>
-          <option>Japanese</option>
+          <option onClick={() => selectLanguageClicked('en')}>English</option>
+          <option onClick={() => selectLanguageClicked('cn')}>Chinese</option>
+          <option onClick={() => selectLanguageClicked('jp')}>Japanese</option>
         </select>
       </div>
     </div>
