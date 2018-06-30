@@ -19,6 +19,11 @@ const IndexPage = () => {
           <a>3. Line chart toggle demo</a>
         </Link>
       </li>
+      <li>
+        <Link href="/intl-practice">
+          <a>4. React Intl Practice</a>
+        </Link>
+      </li>
     </ul>
   );
 }
