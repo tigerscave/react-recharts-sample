@@ -1,24 +1,27 @@
 import React from 'react';
-import { IntlProvider, addLocaleData, FormattedMessage } from 'react-intl'
+import { IntlProvider, addLocaleData } from 'react-intl'
 
 import en from 'react-intl/locale-data/en';
 import ja from 'react-intl/locale-data/ja'; 
+import zh from 'react-intl/locale-data/zh'; 
 
-import { en_US, ja_JP } from '../../languages2'; 
-addLocaleData([...en, ...ja]);
+import { en_US, ja_JP, zh_CN } from '../../languages2'; 
+addLocaleData([...en, ...ja, ...zh]);
 
 import LanguageSwitcher from './language-switcher';
+import IntroductionContent from './introduction-content'; 
 
 const languageDictionaries = {
   en: en_US, 
   ja: ja_JP,
+  zh: zh_CN,
 }; 
 
 export default class IntlPracticeContainer extends React.Component {
   constructor(props) {
     super(props); 
     this.state = {
-      value: 'en',  // cn / jp
+      value: 'en',  // ch / jp
     }
 
     this.selectLanguageClicked = (event) => {
@@ -42,20 +45,7 @@ export default class IntlPracticeContainer extends React.Component {
           <LanguageSwitcher
             selectLanguageClicked={this.selectLanguageClicked}
             value={value} />
-          <div>
-            <FormattedMessage 
-              id="title" />
-          </div>
-          <div>
-            <FormattedMessage 
-              id="name" />
-          </div>
-          <div>
-            <FormattedMessage 
-            id="from" />
-          </div>
-          <div><FormattedMessage 
-            id="food" /></div>
+          <IntroductionContent />
         </div>
       </IntlProvider>
     );
