@@ -11,10 +11,11 @@ const LanguageSwitcher = ({
         <span>User : Rahmat</span>
       </p>
       <div>
-        <select onChange={(event) => selectLanguageClicked(event)} value={value}>
-          <option value="English">English</option>
-          <option value="Chinese">Chinese</option>
-          <option value="Japanese">Japanese</option>
+        <select 
+          onChange={(event) => selectLanguageClicked(event)} 
+          defaultValue={value}>
+          <option value="en">English</option>
+          <option value="ja">Japanese</option>
         </select>
       </div>
     </div>
