@@ -24,6 +24,11 @@ const IndexPage = () => {
           <a>4. React Intl Practice</a>
         </Link>
       </li>
+      <li>
+        <Link href="/intl-practice-v2">
+          <a>5. React Intl Practice V2</a>
+        </Link>
+      </li>
     </ul>
   );
 }
