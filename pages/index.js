@@ -34,6 +34,16 @@ const IndexPage = () => {
           <a>6. React Intl Practice V3</a>
         </Link>
       </li>
+      <li>
+        <Link href="/intract-pie-chart">
+          <a>7. Recharts intract pie chart practice</a>
+        </Link>
+      </li>
+      <style jsx>{`
+        ul {
+          font-size: 1.5rem;
+        }
+      `}</style>
     </ul>
   );
 }
