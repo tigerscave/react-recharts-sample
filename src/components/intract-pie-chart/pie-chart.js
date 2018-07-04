@@ -6,29 +6,15 @@ import { PieChart, Pie, Cell } from 'recharts';
 class SalesPieChart extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      activeIndex: null, 
-    }
-
-    this.onPiaEnter = (data, index) => {
-      console.log('this is data ...', data);
-      this.setState({
-        activeIndex: index,
-      });
-    };
-    this.onPiaLeave = (data, index) => {
-      console.log('this is data ...', data);
-      this.setState({
-        activeIndex: null,
-      });
-    };
   }
 
   render() {
-    const { data } = this.props;
-    const { activeIndex } = this.state; 
-    console.log('....active......');
-    
+    const { 
+      data,
+      onPiaEnter,
+      onPiaLeave, 
+      activeIndex,
+     } = this.props;
     console.log(activeIndex);
     
     return (
@@ -43,16 +29,16 @@ class SalesPieChart extends React.Component {
           innerRadius={80}
           outerRadius={130}
           fill="gray"
-          onMouseEnter={this.onPiaEnter}
-          onMouseLeave={this.onPiaLeave}
+          onMouseEnter={(data) => onPiaEnter(data)}
+          onMouseLeave={(data) => onPiaLeave(data)}
         >
           {
             data.map((entry, index) =>
               <Cell
                 key={`cell-${index}`}
                 fill={
-                  index === activeIndex ? 
-                    'red' : 'gray'
+                  entry.name === activeIndex ? 
+                    'gray' : 'red'
                 }
               />)
           }
