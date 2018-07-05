@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { PieChart, Pie, Cell } from 'recharts';
 
+const findCategoryIndex = (data, categoryCode) => {
+  return 0;
+}
 
 class SalesPieChart extends React.Component {
   constructor(props){
@@ -11,7 +14,6 @@ class SalesPieChart extends React.Component {
     }
 
     this.onPiaEnter = (data, index) => {
-      console.log('this is data ...', data);
       this.setState({
         activeIndex: index,
       });
@@ -24,12 +26,22 @@ class SalesPieChart extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log("---componentWillReceiveProps---");
+    console.log(nextProps);
+    const {
+      data,
+      selectedCategoryCode } = nextProps;
+    console.log(data);
+    const selectedCodeIndex = findCategoryIndex(data, selectedCategoryCode);
+    this.setState({
+      activeIndex: selectedCodeIndex
+    });
+  }
+
   render() {
-    const { data } = this.props;
+    const { data, selectedCategoryCode } = this.props;
     const { activeIndex } = this.state; 
-    console.log('....active......');
-    
-    console.log(activeIndex);
     
     return (
       <PieChart height={300} width={300}>
