@@ -8,36 +8,30 @@ class IntractPieChartContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedCategoryCode: "",
+      selectedCategoryIndex: null,
     }
 
-    this.onSelectChange = e => {
+    this.onButtonClicked = index => {
       this.setState({
-        selectedCategoryCode: e.target.value
+        selectedCategoryIndex: index
       })
     }
   }
 
   render() {
-    const { selectedCategoryCode } = this.state;
+    const { selectedCategoryIndex } = this.state;
     return (
       <div>
         <h1>Intractive Pie chart demo</h1>
         <SalesPieChart
           data={latestLargeCategories}
-          selectedCategoryCode={selectedCategoryCode} />
-        <select
-          value={selectedCategoryCode}
-          onChange={this.onSelectChange}>
-          <option value="">None</option>
-          {latestLargeCategories.map(largeCategory => (
-            <option
-              value={largeCategory.categoryCode}
-              >
-              {largeCategory.categoryCode}
-            </option>
+          selectedCategoryIndex={selectedCategoryIndex} />
+        <button onClick={() => this.onButtonClicked(null)}>total</button>
+        {latestLargeCategories.map((largeCategory, index) => (
+          <button onClick={() => this.onButtonClicked(index)}>
+            {largeCategory.categoryCode}
+          </button>
           ))}
-        </select>
         <style jsx>{`
           h1 {
             color: red;

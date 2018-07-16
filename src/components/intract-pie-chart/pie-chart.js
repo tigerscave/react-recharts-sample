@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { PieChart, Pie, Cell } from 'recharts';
 
-const findCategoryIndex = (data, categoryCode) => {
-  return 0;
-}
-
 class SalesPieChart extends React.Component {
   constructor(props){
     super(props);
@@ -31,16 +27,15 @@ class SalesPieChart extends React.Component {
     console.log(nextProps);
     const {
       data,
-      selectedCategoryCode } = nextProps;
+      selectedCategoryIndex } = nextProps;
     console.log(data);
-    const selectedCodeIndex = findCategoryIndex(data, selectedCategoryCode);
     this.setState({
-      activeIndex: selectedCodeIndex
+      activeIndex: selectedCategoryIndex
     });
   }
 
   render() {
-    const { data, selectedCategoryCode } = this.props;
+    const { data, selectedCategoryIndex } = this.props;
     const { activeIndex } = this.state; 
     
     return (
