@@ -39,6 +39,11 @@ const IndexPage = () => {
           <a>7. Recharts intract pie chart practice</a>
         </Link>
       </li>
+      <li>
+        <Link href="/chat-room">
+          <a>8. Chat Room Firebase</a>
+        </Link>
+      </li>
       <style jsx>{`
         ul {
           font-size: 1.5rem;

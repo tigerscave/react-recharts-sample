@@ -1,7 +1,6 @@
 {
   "name": "react-recharts-sample",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,10 +18,13 @@
   },
   "homepage": "https://github.com/tigerscave/react-recharts-sample#readme",
   "dependencies": {
+    "firebase": "^5.4.1",
     "next": "^6.0.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-intl": "^2.4.0",
     "recharts": "^1.0.0-beta.10"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
